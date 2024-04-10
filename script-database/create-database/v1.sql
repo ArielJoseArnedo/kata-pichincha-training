@@ -1,0 +1,1 @@
+create database bddcdb_msa_kata_pokemon;

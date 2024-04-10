@@ -1,0 +1,17 @@
+version: "3.1"
+services: 
+  postgres:
+    container_name: pichincha-postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../script-database/create-database/:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: pichincha
+      POSTGRES_PASSWORD: pichincha
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8181:8080

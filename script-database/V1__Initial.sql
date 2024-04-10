@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    id UUID PRIMARY KEY NOT NULL,
+    nombres VARCHAR(120) NOT NULL,
+    apellidos VARCHAR(120) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pokemones (
+    nombre VARCHAR(70) PRIMARY KEY NOT NULL,
+    idUsuario UUID REFERENCES usuarios(id) ON DELETE CASCADE NOT NULL,
+    peso INTEGER NOT NULL,
+    altura INTEGER NOT NULL,
+    experiencia INTEGER NOT NULL,
+    habilidades TEXT
+);
